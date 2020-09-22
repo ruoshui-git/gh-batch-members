@@ -21,13 +21,12 @@ with open(args.get('user_file'), 'r') as fin:
 
 load_dotenv()
 
-gh_username = os.getenv('GH_USERNAME')
-gh_passws = os.getenv('GH_PASSWD')
+gh_token = os.getenv('GH_TOKEN')
 
 org_name = os.getenv('GH_ORG')
 
 print("authenticating...")
-g = Github(gh_username, gh_passws)
+g = Github(gh_token)
 
 org = g.get_organization(org_name)
 
